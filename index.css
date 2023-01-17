@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --Soft_blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --Very_dark_blue_main: hsl(217, 54%, 11%);
+    --Very_dark_blue_card: hsl(216, 50%, 16%);
+    --Very_dark_blue_line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .card {
+    width: 300px;
+    padding: 1.2rem;
+    border-radius: 16px;
+    -webkit-box-shadow: 0px 1px 50px 0px rgba(0,0,0,0.19);
+    -moz-box-shadow: 0px 1px 50px 0px rgba(0,0,0,0.19);
+    box-shadow: 0px 1px 50px 0px rgba(0,0,0,0.19);
+}
+
+main .card .card-header{
+    width: 100%;
+    height: 250px;
+    background-image: url(./images/image-equilibrium.jpg);
+    background-size: cover;
+    background-position: center center;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+main .card .card-header:hover::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    background: none;
+    background-image: url(./images/icon-view.svg);
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #0197A8;
+    opacity: .8;
+}
+
+  
+
+main .card .card-body {
+    padding: 1.2rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+main .card .card-body .title_main {
+    color: var(--White);
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+main .card .card-body .title_main:hover{
+    color: var(--Cyan);
+}
+
+main .card .card-body .description_main {
+    color: var(--Soft_blue);
+    font-size: 16px;
+    line-height: 1.5em;
+    font-weight: 300;
+}
+
+main .card .card-body .details_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .card .card-body .details_main .details_a,
+main .card .card-body .details_main .details_b{
+    display: flex;
+    justify-content: start;
+    gap: 4px;
+}
+
+main .card .card-body .details_main i{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    width: 1em;
+    height: 1em;
+}
+
+main .card .card-body .details_main .icon_diamond{
+    background-image: url(./images/icon-ethereum.svg);
+}
+
+main .card .card-body .details_main .icon_time{
+    background-image: url(./images/icon-clock.svg);
+}
+main .card .card-body .details_main .price_main{
+    font-weight: 400;
+    color: var(--Cyan);
+    font-size: 14px;
+}
+
+main .card .card-body .details_main .time_main{
+    color: var(--Soft_blue);
+    font-size: 14px;
+    line-height: 1.5em;
+    font-weight: 300;
+}
+
+main .card .divider{
+    width: 100%;
+    height: 1px;
+    background-color: var(--Very_dark_blue_line);
+    margin: 1rem 0;
+}
+
+main .card .card-footer{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+main .card .card-footer .avatar{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url(./images/image-avatar.png);
+    background-size: cover;
+    border: solid 2px var(--White);
+    border-radius: 50%;
+}
+
+.creation_main{
+    color: var(--Soft_blue);
+    font-size: 16px;
+    line-height: 1.5em;
+    font-weight: 300;
+}
+.creation_main span{
+    color: var(--White);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.creation_main span:hover{
+    color: var(--Cyan);
+}
+
+
+body {
+    background-color: var(--Very_dark_blue_main);
+}
+
+.card {
+    background-color: var(--Very_dark_blue_card);
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+}
